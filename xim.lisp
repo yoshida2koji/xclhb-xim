@@ -326,7 +326,7 @@
          (data (x:make-buffer (+ 8 attrs-bytes)))
          (offset 8))
     (x:write-card8 data 0 +xim-create-ic+)
-    (x:write-card16 data 2 7)
+    (x:write-card16 data 2 (1+ (floor attrs-bytes 4)))
     (x:write-card16 data 4 (xim-input-method-id xim))
     (x:write-card16 data 6 attrs-bytes)
     (when input-style-id
